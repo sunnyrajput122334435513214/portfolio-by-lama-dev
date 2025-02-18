@@ -9,14 +9,14 @@ import sunny from "./image/sunny.png";
 import moon from "./image/moon.png";
 import logo from "./image/logo.png";
 import dots from "./image/dot.png";
+import icon from "./image/icon.png";
+import item from "./image/item.png";
 //study it
 //{initial={{ opacity: 0, scale: 0.8 }}
 // animate={{ opacity: 1, scale: 1 }}
 // transition={{ duration: 1, repeat: Infinity, repeatType: "mirror" }}}
 function App() {
   const [isOpen, setIsOpen] = useState(false);
- 
-
 
   return (
     <>
@@ -52,7 +52,10 @@ function App() {
                 <a href="#">Contact</a>
               </li>
             </ul>
-            <img  onClick={() => document.querySelector("html").classList.toggle("dark")}
+            <img
+              onClick={() =>
+                document.querySelector("html").classList.toggle("dark")
+              }
               src={moon}
               alt=""
               className="hidden md:block h-8 w-8 cursor-pointer bg-white dark:bg-black text-black dark:text-white "
@@ -136,49 +139,194 @@ function App() {
       </div>
       {/* About  */}
 
-        {/* <!-- left --> */}
-        <div id="about" class="px-10 dark:bg-slate-900">
-      <div
-        class="container mx-auto py-40 flex flex-col-reverse lg:flex-row items-center gap-20"
-      >
-      
-        <div class="relative">
-          <img
-            class="h-1/4 absolute top-0 left-0 -z-10"
-            src="./img/dots.png"
-            alt=""
-          />
-          <div class="h-full rounded-full overflow-hidden">
-            <img src="./img/portrait.png" alt="" />
+      <div id="about" className="px-10 dark:bg-slate-900">
+        <div className="container mx-auto py-40 flex flex-col-reverse lg:flex-row items-center gap-20">
+          {/* <!-- left side-- Image--> */}
+          <div className="relative w-full lg:w-1/2 flex justify-center">
+            <img
+              className="absolute top-0 left-0 -z-10 h-1/4"
+              src={dots}
+              alt=""
+            />
+
+            <img className="h-3/4 left-0" src={sunny} alt="" />
           </div>
-        </div>
-        {/* <!-- right --> */}
-        <div className="my-auto flex flex-col gap-3">
-          <h1 className="text-indigo-600 font-bold">ABOUT ME</h1>
-          <h1 className="text-3xl font-medium dark:text-white">Better Design</h1>
-          <h1 className="text-3xl font-medium dark:text-white">
-            Better Experience
-          </h1>
-          <p className="text-gray-400">
-            I design and build digital products. I'm also a multi-disciplinary
-            maker with over 10 years of experiences in wide range of design
-            disciplines.
-          </p>
-          <h2 className="text-gray-400 font-medium">HTML</h2>
-          <div className="w-full bg-gray-200 h-1.5 rounded-md">
-            <div className="w-full bg-indigo-600 h-1.5 rounded-md"></div>
-          </div>
-          <h2 className="text-gray-400 font-medium">Javascript</h2>
-          <div className="w-full bg-gray-200 h-1.5 rounded-md">
-            <div className="w-4/6 bg-indigo-600 h-1.5 rounded-md"></div>
-          </div>
-          <h2 className="text-gray-400 font-medium">React</h2>
-          <div className="w-full bg-gray-200 h-1.5 rounded-md">
-            <div class="w-5/6 bg-indigo-600 h-1.5 rounded-md"></div>
+          {/* <!-- right --> */}
+          <div className=" w-full lg:w-3/4 my-auto flex flex-col gap-3">
+            <h1 className="text-indigo-600 font-bold">ABOUT ME</h1>
+            <h1 className="text-3xl font-medium dark:text-white">
+              Better Design
+            </h1>
+            <h1 className="text-3xl font-medium dark:text-white">
+              Better Experience
+            </h1>
+            <p className="text-gray-400">
+              I design and build digital products. I'm also a multi-disciplinary
+              maker with over 10 years of experiences in wide range of design
+              disciplines.
+            </p>
+            <h2 className="text-gray-400 font-medium">HTML</h2>
+            <div className="w-full bg-gray-200 h-1.5 rounded-md">
+              <div className="w-full bg-indigo-600 h-1.5 rounded-md"></div>
+            </div>
+            <h2 className="text-gray-400 font-medium">Javascript</h2>
+            <div className="w-full bg-gray-200 h-1.5 rounded-md">
+              <div className="w-4/6 bg-indigo-600 h-1.5 rounded-md"></div>
+            </div>
+            <h2 className="text-gray-400 font-medium">React</h2>
+            <div className="w-full bg-gray-200 h-1.5 rounded-md">
+              <div class="w-5/6 bg-indigo-600 h-1.5 rounded-md"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* services */}
+      <div>
+        <div className="container mx-auto">
+          {/* top */}
+          <div className="flex flex-col gap-3 items-center">
+            <h1 className="font-bold text-indigo-600">SERVICES</h1>
+            <h1 className="text-3xl">What do I offer?</h1>
+            <p className="w-1/2  text-center text-gray-400">
+              I design and build digital products. I'm also a multi-disciplinary
+              maker with over 10 years of experiences in wide range of design
+              disciplines.
+            </p>
+          </div>
+          {/* bottom */}
+          <div className="flex flex-wrap justify-between">
+            {/* card */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
+              <img className="w-10" src={icon} alt="" />
+              <h1 className="font-medium text-lg dark:text-white">
+                UX / UI Design
+              </h1>
+              <p className="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+              <a className="text-indigo-600 font-semibold text-sm" href="">
+                Read More
+              </a>
+            </div>
+            {/* card 2 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
+              <img className="w-10" src={icon} alt="" />
+              <h1 className="font-medium text-lg dark:text-white">
+                UX / UI Design
+              </h1>
+              <p className="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+              <a className="text-indigo-600 font-semibold text-sm" href="">
+                Read More
+              </a>
+            </div>
+            {/* card 3 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
+              <img className="w-10" src={icon} alt="" />
+              <h1 className="font-medium text-lg dark:text-white">
+                UX / UI Design
+              </h1>
+              <p className="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+              <a className="text-indigo-600 font-semibold text-sm" href="">
+                Read More
+              </a>
+            </div>
+            {/* card 4 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
+              <img className="w-10" src={icon} alt="" />
+              <h1 className="font-medium text-lg dark:text-white">
+                UX / UI Design
+              </h1>
+              <p className="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+              <a className="text-indigo-600 font-semibold text-sm" href="">
+                Read More
+              </a>
+            </div>
+            {/* card 5 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
+              <img className="w-10" src={icon} alt="" />
+              <h1 className="font-medium text-lg dark:text-white">
+                UX / UI Design
+              </h1>
+              <p className="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+              <a className="text-indigo-600 font-semibold text-sm" href="">
+                Read More
+              </a>
+            </div>
+            {/* card 6 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
+              <img className="w-10" src={icon} alt="" />
+              <h1 className="font-medium text-lg dark:text-white">
+                UX / UI Design
+              </h1>
+              <p className="text-gray-400">
+                I specialize in creating interactive websites for individuals
+                and small businesses.
+              </p>
+              <a className="text-indigo-600 font-semibold text-sm" href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* portfolio section */}
+      <div>
+        <div className="container mx-auto">
+          {/* top */}
+          <div className="flex flex-col gap-3 items-center">
+            <h1 className="font-bold text-indigo-600">Portfolio</h1>
+            <h1 className="text-3xl">Works and Projects</h1>
+            <p className="w-1/2  text-center text-gray-400">
+              I design and build digital products. I'm also a multi-disciplinary
+              maker with over 10 years of experiences in wide range of design
+              disciplines.
+            </p>
+          </div>
+          {/* bottom */}
+          <div className="flex flex-wrap justify-between">
+            {/* card */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 ">
+              <img className="w-full" src={item} alt="" />
+            </div>
+            {/* card 2 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 ">
+              <img className="w-full" src={item} alt="" />
+            </div>
+            {/* card 3 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 ">
+              <img className="w-full" src={item} alt="" />
+            </div>
+            {/* card 4 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 ">
+              <img className="w-full" src={item} alt="" />
+            </div>
+            {/* card 5 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 ">
+              <img className="w-full" src={item} alt="" />
+            </div>
+            {/* card 6 */}
+            <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 ">
+              <img className="w-full" src={item} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* contact section */}
       {/* <div className='bg-blue-500 h-screen text-white flex items-center justify-center p-5 '>
       {/* jb flex hoga sm me to gap-16 rakha hai overlap hua tha */}
       {/* <div className='bg-white p-6 rounded-lg shadow-2xl sm:flex sm:gap-10 sm:p-0'>
